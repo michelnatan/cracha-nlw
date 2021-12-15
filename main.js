@@ -14,12 +14,17 @@ function changeSocialMediaLinks() {
     for (li of socialLinks.children) {
         const social = li.getAttribute('class')
 
-        //necessario usar crase para incluir variaveis
-
-        li.children[0].href = `https://${social}.com/${linksSocialMedia[social]}`
-        //alert(li.children[0].href)
+        //Condição especial para youtube devido o /channel
+        if (linksSocialMedia[social] == linksSocialMedia.youtube) {
+            li.children[0].href = `https://${social}.com/channel/${linksSocialMedia[social]}`
+        } else {
+            //necessario usar crase para incluir variaveis  
+            li.children[0].href = `https://${social}.com/${linksSocialMedia[social]}`
+            //alert(li.children[0].href)
+        }
     }
 }
+
 
 changeSocialMediaLinks()
 
