@@ -1,66 +1,171 @@
-<!-- Exemplo de código HTML aqui -->
-<!DOCTYPE html>
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-<html>
+html,
+body {
+    /*configurando variavel*/
+    --black: hsl(240, 6%, 13%);
+    --gray: hsl(240, 9%, 89%);
 
-<head lang="pt-BR">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Michel Feyh - DoWhile 2021</title>
-    <link rel="stylesheet" href="style.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    height: 100%;
+    font-family: 'Roboto', sans-serif;
+    -webkit-font-smoothing: antialiased;
+}
 
-</head>
+body {
+    display: grid;
+    place-items: center;
+    background-color: #121214;
+    background-image: url(./images/Desktop2.png);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
 
-<body>
 
-    <main>
+main{
+    background: url(images/background.svg) no-repeat center/cover;
+    width: 380px;
+    height: 780px;
+    border-radius: 20px;
+    box-shadow: 5px 8px 30px 5px rgba(0, 0, 0, 0.9);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transform-style: preserve-3d;
+    transform: translateZ(0);
+}
 
-        <div class="container">
+.container{
+    max-width: 250px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    color: var(--gray);
+}
 
-            <div class="avatar">
-                <span>
-                    <img src="images/build.svg" alt="Selo Rocketseat" />
-                </span>
-                <img id="userImage" src="ht05?s=400&u=abe60cd0c0df5805b72fccd2298c6eb52cde03d9&v=4"
-                    alt="Foto pessoal" />
-            </div>
+.avatar{
+    width: 10rem;
+    margin: 11.5rem auto 0;
+    /*relative: fica como relativo para o uso do absolute*/
+    position: relative;
+}
 
-            <h1 id="userName">Mayk Brito</h1>
-            <a id="userLink" href="https://github.com/michelnatan" target="_blank">
-                <img src="images/github.svg" alt="ícone github">
-                <span id="userLogin">michelnatan</span></a>
-            <p id="userBio">An instructor focused on helping pople start programming for web</p>
-            <ul id="socialLinks">
-                <li class="youtube">
-                    <a href="https://youtube.com" target="_blank">
-                        <img src="images/youtube.svg" alt="ícone youtube" />
-                    </a>
-                </li>
-                <li class="facebook">
-                    <a href="https://facebook.com" target="_blank">
-                        <img src="images/facebook.svg" alt="ícone facebook" />
-                    </a>
-                </li>
-                <li class="instagram">
-                    <a href="https://instagram.com" target="_blank">
-                        <img src="images/instagram.svg" alt="ícone instagram" />
-                    </a>
-                </li>
-                <li class="twitter">
-                    <a href="https://twitter.com" target="_blank">
-                        <img src="images/twitter.svg" alt="ícone twitter" />
-                    </a>
-                </li>
-            </ul>
-        </div>
-    </main>
+.avatar span{
+    /*absolute: deixar acima de outras camadas*/
+    position: absolute;
+    top: -15px;
+    z-index: 1;
+}
 
-    <!--JS após HTML pois acessa o DOM após carregamento do site-->
-    <script src="main.js"></script>
+.avatar > img{
+    width: 10rem;
+    height: 11.5rem;
+    box-shadow: 80px 80px 80px 80px rgba(255, 255, 255, 0.9);
+  
+    /*object-fit: cover;: Fazer imagem se adaptar as medidas setadas*/
+    object-fit: cover;
 
-</body>
+    /* clip-path: Montar formas para imgs -> https://bennettfeely.com/clippy/*/ 
+    clip-path: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%);
+}
 
-</html>
+h1 {
+    font-size: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+a {
+    text-decoration: none;
+    margin-top: .25rem;
+    color: var(--gray);
+    display: flex;
+    gap: 0.75rem;
+    justify-content: center;
+}
+
+p{
+    margin-top: 2rem;
+}
+
+ul{
+    margin-top: 4rem;
+    list-style: none;
+    padding: 0;
+    /*caixas ao lado do outro*/
+    display: flex;
+    /*uso de GAP e justify-content devido ao display: flex*/
+    gap: 0.5rem;
+    justify-content: center;
+}
+
+.social{
+    position: relative;
+    border-radius: 0.25rem;
+    width: 50px;
+    top: 0;
+    transition: all ease 0.3s;
+}
+
+.youtube:hover {
+    box-shadow: 0rem 5px 15px rgba(255, 0, 0, 0.5);
+    transform: scale(1.1,1.1);
+  }
+  
+  .facebook:hover {
+    box-shadow: 0rem 5px 15px rgba(40, 103, 178, 0.5);
+    transform: scale(1.1,1.1);
+  }
+  
+  .instagram:hover {
+    box-shadow: 0rem 5px 15px rgb(225, 48, 108);
+    transform: scale(1.1,1.1);
+  }
+  
+  .twitter:hover {
+    box-shadow: 0rem 5px 15px rgba(0, 172, 238, 0.5);
+    transform: scale(1.1,1.1);
+  }
+
+@media (min-width: 1024px) {
+
+    main {
+        width: 358px;
+        height: 560px;
+        background: url(./images/mask.svg);
+        background-size: 358px 280px;
+        background-position: 0px -80px;
+        background-repeat: no-repeat;
+      }
+      .avatar {
+        margin: 4.7rem auto 0;
+      }
+    
+      ul {
+        margin: 3.5rem auto 0;
+      }
+    
+    .line {
+        position: absolute;
+        z-index: 2;
+        width: 80px;
+        height: 46.8rem;
+      
+        background: linear-gradient( 180deg,#ff008e 80%, #ffcd1e )  ;
+        border-radius: 0 0 3px 3px;
+        top: 0;
+        margin-top: -45rem;
+        margin-left: 8.9rem;
+      }
+
+      .mark-top {
+        position: absolute;
+        background: #121214;
+        z-index: 1;
+        width: 100px;
+        height: 12px;
+        margin: 1.5rem 8.3rem auto;
+        border-radius: 1.5rem;
+      }
+}
