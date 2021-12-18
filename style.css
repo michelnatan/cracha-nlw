@@ -110,15 +110,26 @@ ul{
     justify-content: center;
 }
 
-.social{
-    transition: all ease 0.3s;
-
-}
 
 .build{
 	animation: giro 15s linear infinite;
 }
 
+.youtube{
+    transition: all ease 0.3s;
+}
+
+.facebook{
+    transition: all ease 0.3s;
+}
+
+.instagram{
+    transition: all ease 0.3s;
+}
+
+.twitter{
+    transition: all ease 0.3s;
+}
 
 .youtube:hover {
     box-shadow: 0px 5px 15px rgb(255, 0, 0);
