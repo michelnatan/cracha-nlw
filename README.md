@@ -1,7 +1,7 @@
 # cracha-nlw
 
 
-<h2 id="Desktop resposive">Crachá virtual na trilha Origin na NLW Heat</h2>
+<h2 align="center" id="Desktop resposive">Crachá virtual na trilha Origin da NLW Heat</h2>
 <p align="center">
   <img 
     src="./images/cracha.gif"
